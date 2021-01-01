@@ -1,8 +1,10 @@
 # BoredSoloCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bored_solo_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+CLI Project - Phase 1
 
-TODO: Delete this and the text above, and describe your gem
+This gem uses 'The Bored API' https://www.boredapi.com/ 
+
+The purpose of this gem is to provide the user with an activity to do when they are bored and by themself.
 
 ## Installation
 
