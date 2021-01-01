@@ -11,10 +11,17 @@ class CLI
         puts ""
         puts "Let's Begin!"
         puts "Please type in your Name:"
+        greet(input)
     end
 
     def input
         gets.strip
+    end
+
+    def greet(name)
+        puts "Ok #{name}, let's find you something to do!"
+        puts "* Type 'y' to see activities"
+        puts "* Type 'exit' if you are no longer bored"
     end
 
 
