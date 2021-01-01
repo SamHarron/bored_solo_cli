@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/environment.rb'
+
+# This will create a new instance of your cli.
+CLI.new.intro
+
+
