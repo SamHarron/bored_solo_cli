@@ -45,6 +45,7 @@ class CLI
         puts "Select an Activity for more detail by typing the number."
 
         choice = input
+        SoloActivities.find_activity(choice)
     end
 
     def select

@@ -26,5 +26,13 @@ class SoloActivities
     def self.all
         @@all
     end
-    
+
+    # this method accepts the activity's name, and find the object
+    # with that name
+    def self.find_activity(activity_name)
+        self.all.find do |activty|
+            activity.activity == activity_name
+        end
+    end
+
 end
