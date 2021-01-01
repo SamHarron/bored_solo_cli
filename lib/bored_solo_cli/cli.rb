@@ -29,6 +29,7 @@ class CLI
         ["cook", "write", "take a bath", "learn something"].each.with_index(1) do |activity, i|
             puts "#{i}. #{activity}"
         end
+        activity_details
     end
 
     def goodbye
@@ -40,11 +41,18 @@ class CLI
         select
     end
 
+    def activity_details
+        puts "Select an Activity for more detail by typing the number."
+
+        choice = input
+    end
+
     def select
         choice = input
 
         if choice == 'y'
             activities_list
+            select
         elsif choice == 'exit'
             goodbye
         else
