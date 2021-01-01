@@ -13,5 +13,9 @@ class CLI
         puts "Please type in your Name:"
     end
 
+    def input
+        gets.strip
+    end
+
 
 end
