@@ -14,6 +14,12 @@ class SoloActivities
         @type = type
         @accessibility = accessibility
         @price = price
+        save
+    end
+
+    # This method is a way to save instances, will get added to @@all
+    def save
+        @@all << self
     end
 
 end
