@@ -21,5 +21,9 @@ class SoloActivities
     def save
         @@all << self
     end
-
+    
+    # This method is a way to read your @@all array
+    def self.all
+        @@all
+    end
 end
