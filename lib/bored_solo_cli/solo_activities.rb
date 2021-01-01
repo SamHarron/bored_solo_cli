@@ -5,6 +5,8 @@
 
 class SoloActivities
 
+    @@all = []
+
     attr_accessor :activity, :type, :accessibility, :price
 
     def initialize(activity, type, accessibility, price)
