@@ -25,6 +25,11 @@ class CLI
         select
     end
 
+    def invalid
+        puts "That choice is not valid, please choose 'y' or 'exit'"
+        select
+    end
+
     def select
         choice = input
 
@@ -33,8 +38,7 @@ class CLI
         elsif choice == 'exit'
             #goodbye message
         else
-            puts 'invalid'
-            #invalid
+            invalid
         end
     end
 end
