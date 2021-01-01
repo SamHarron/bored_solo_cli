@@ -25,6 +25,10 @@ class CLI
         select
     end
 
+    def goodbye
+        puts "Goodbye, We hope your Boredom has been cured!"
+    end
+
     def invalid
         puts "That choice is not valid, please choose 'y' or 'exit'"
         select
@@ -36,7 +40,7 @@ class CLI
         if choice == 'y'
             # activity list
         elsif choice == 'exit'
-            #goodbye message
+            goodbye
         else
             invalid
         end
