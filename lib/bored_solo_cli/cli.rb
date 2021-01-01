@@ -25,6 +25,12 @@ class CLI
         select
     end
 
+    def activities_list
+        ["cook", "write", "take a bath", "learn something"].each.with_index(1) do |activity, i|
+            puts "#{i}. #{activity}"
+        end
+    end
+
     def goodbye
         puts "Goodbye, We hope your Boredom has been cured!"
     end
@@ -38,7 +44,7 @@ class CLI
         choice = input
 
         if choice == 'y'
-            # activity list
+            activities_list
         elsif choice == 'exit'
             goodbye
         else
