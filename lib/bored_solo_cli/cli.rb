@@ -37,24 +37,26 @@ class CLI
     end
 
     def invalid
-        puts "That choice is not valid, please choose 'y' or 'exit'"
+        puts "That choice is not valid, please try again."
         select
     end
 
     def activity_details
-        puts "Select an Activity for more detail by typing the number."
+        puts "Type the Activity Name for more detail."
 
         choice = input
-         SoloActivities.find_activity(choice)
+        puts "#{choice}"
+        # SoloActivities.find_activity(choice)
         
     end
 
     def select
         choice = input
 
+
         if choice == 'y'
             activities_list
-            select
+            puts select
         elsif choice == 'exit'
             goodbye
         else
