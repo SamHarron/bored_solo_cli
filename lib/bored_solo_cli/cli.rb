@@ -47,9 +47,17 @@ class CLI
 
         choice = input
         puts "#{choice}"
-        # SoloActivities.find_activity(choice)
-        
+        activity = SoloActivities.find_activity(choice)
     end
+
+    def activity_selection(activity)
+        puts "Activity: #{activity.name}"
+        puts "Type: #{activity.type}"
+        puts "Accessibility: #{activity.accessibility}"
+        puts "Price: #{activity.price}"
+        select
+    end
+
 
     def select
         choice = input
