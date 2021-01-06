@@ -9,11 +9,18 @@ class SoloActivities
 
     attr_accessor :activity, :type, :accessibility, :price
 
-    def initialize(activity, type, accessibility, price)
-        @activity = activity
-        @type = type
-        @accessibility = accessibility
-        @price = price
+    # def initialize(activity, type, accessibility, price)
+    #     @activity = activity
+    #     @type = type
+    #     @accessibility = accessibility
+    #     @price = price
+    #     save
+    # end
+
+    def initialize(activity_hash)
+        activity_hash.each do |k, v|
+            self.send("#{k}=", v) if self.respond_to?("#{k}=")
+        end
         save
     end
 

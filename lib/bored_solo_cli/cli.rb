@@ -27,7 +27,7 @@ class CLI
     end
 
     def activities_list
-        ["cook", "write", "take a bath", "learn something"].each.with_index(1) do |activity, i|
+        SoloActivities.all.each.with_index(1) do |activity, i|
             puts "#{i}. #{activity}"
         end
         activity_details
