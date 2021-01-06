@@ -9,6 +9,7 @@ class CLI
         puts "Being Bored is Boring." 
         puts "Bored Solo CLI can help you find fun activities you can do by yourself!"
         puts ""
+        API.get_data
         puts "Let's Begin!"
         puts "Please type in your Name:"
         greet(input)
@@ -56,7 +57,7 @@ class CLI
 
         if choice == 'y'
             activities_list
-            puts select
+            select
         elsif choice == 'exit'
             goodbye
         else
