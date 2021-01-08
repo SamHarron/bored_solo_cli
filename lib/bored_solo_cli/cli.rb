@@ -48,20 +48,6 @@ class CLI
         puts "* Type 'exit' to exit the application."
 
         select
-
-       # choice = input
-       # if choice == "info"
-       #     info
-       # elsif choice == "n"
-       #     SoloActivities.all.clear
-       #     API.get_data
-       #     random_activity
-       #     select
-       # elsif choice == "exit"
-       #     goodbye
-       # else
-       #     invalid
-       # end
     end
 
     def info
