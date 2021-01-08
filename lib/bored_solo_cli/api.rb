@@ -1,12 +1,12 @@
-
-
 class API
 
     def self.get_data
         response = RestClient.get('https://www.boredapi.com/api/activity?participants=1')
         activity_array = JSON.parse(response)
-        activity_array.each do |activity|
-            SoloActivities.new(activity)
-        end
+        activity_key_value = activity_array.values[0]
+      
+        SoloActivities.new(activity_key_value)
+
+        
     end
 end

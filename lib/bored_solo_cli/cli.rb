@@ -1,8 +1,4 @@
-# communication between user and data
-
 class CLI 
-
-    #entry way method
 
     def intro
         puts ""
@@ -27,8 +23,10 @@ class CLI
     end
 
     def activities_list
-        SoloActivities.all.each.with_index(1) do |activity, i|
-            puts "#{i}. #{activity}"
+        SoloActivities.all.each do |activity|
+            puts ""
+            puts "#{activity.activity}"
+            puts ""
         end
         activity_details
     end
@@ -47,22 +45,20 @@ class CLI
 
         choice = input
         puts "#{choice}"
-        activity = SoloActivities.find_activity(choice)
+        activity_selection = SoloActivities.find_activity(choice)
     end
 
-    def activity_selection(activity)
-        puts "Activity: #{activity.name}"
-        puts "Type: #{activity.type}"
-        puts "Accessibility: #{activity.accessibility}"
-        puts "Price: #{activity.price}"
-        select
-    end
+    # def activity_selection(activity)
+    #     puts "Activity: #{activity.activity}"
+    #     puts "Type: #{activity.type}"
+    #     puts "Accessibility: #{activity.accessibility}"
+    #     puts "Price: #{activity.price}"
+    #     select
+    # end
 
 
     def select
         choice = input
-
-
         if choice == 'y'
             activities_list
             select
