@@ -32,8 +32,6 @@ class CLI
         activity_details
     end
 
-
-
     def goodbye
         puts "Goodbye, We hope your Boredom will be cured!"
         Kernel.exit
@@ -45,23 +43,25 @@ class CLI
     end
 
     def activity_details
-        puts "* Type 'info' for more detail" 
+        puts "* Type 'info' for more details." 
         puts "* Type 'n' to get a different activity."
         puts "* Type 'exit' to exit the application."
 
-        choice = input
-        if choice == "info"
-            info
-        elsif choice == "n"
-            SoloActivities.all.clear
-            API.get_data
-            random_activity
-            select
-        elsif choice == "exit"
-            goodbye
-        else
-            invalid
-        end
+        select
+
+       # choice = input
+       # if choice == "info"
+       #     info
+       # elsif choice == "n"
+       #     SoloActivities.all.clear
+       #     API.get_data
+       #     random_activity
+       #     select
+       # elsif choice == "exit"
+       #     goodbye
+       # else
+       #     invalid
+       # end
     end
 
     def info
@@ -125,6 +125,8 @@ class CLI
         if choice == 'y'
             random_activity
             select
+        elsif choice == "info"
+            info
         elsif choice == 'exit'
             goodbye
         elsif choice == 'n'
