@@ -27,12 +27,12 @@ class SoloActivities
         @@all
     end
   
-    def self.find_activity(activity_name)
-        self.all.find do |activity|
-            activity.activity == activity_name
-        end
+    # def self.find_activity(activity_name)
+    #     self.all.find do |activity|
+    #         activity.activity == activity_name
+    #     end
     
-    end
+    # end
     
     
 end
