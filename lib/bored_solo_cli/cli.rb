@@ -16,10 +16,12 @@ class CLI
     end
 
     def greet(name)
-        puts "Ok #{name}, let's find you something to do!"
-        puts "* Type 'y' to see activities"
-        puts "* Type 'exit' if you are no longer bored"
-        select
+        puts ""
+        puts "Ok #{name}..."
+        # puts "* Type 'y' to see an activity"
+        # puts "* Type 'exit' if you are no longer bored"
+        random_activity
+        # select
     end
 
     def random_activity
@@ -53,19 +55,43 @@ class CLI
         end
     end
 
-  def info
-    SoloActivities.all.each do |activity|
-      puts ""
-      puts "#{activity.activity.values[0]}"
-      puts ""
-      puts "Type: #{activity.activity.values[1]}"
-      puts ""
-      puts "Accessibility: #{activity.activity.values[6]}"
-      puts ""
-      puts "Price: #{activity.activity.values[3]}"
+    def info
+        SoloActivities.all.each do |activity|
+        puts "  |"
+        puts "  |"
+        puts "  v"
+        puts "#{activity.activity.values[0]}..."
+        puts "_____________________________________________________________"
+        puts ""
+        puts " - This activity is #{activity.activity.values[1]} based."
+        puts ""
+        accessibility_level
+        puts ""
+        puts "Price: #{activity.activity.values[3]}"
     end
-      select
-  end
+        select
+    end
+
+    def accessibility_level
+        SoloActivities.all.each do |activity|
+
+        if  activity.activity.values[6].between?(0,0.25)
+            puts " - This Activity is very possible."
+            puts "      Accessibility Rank: #{activity.activity.values[6]} (Ranked 0 to 1)."
+        elsif activity.activity.values[6].between?(0.26, 0.5)
+            puts " - This Activity is possible."
+            puts "      Accessibility Rank: #{activity.activity.values[6]} (Ranked 0 to 1)."
+        elsif   activity.activity.values[6].between?(0.51, 0.75)
+            puts " - This Activity could be possible."
+            puts "      Accessibility Rank: #{activity.activity.values[6]} (Ranked 0 to 1)."
+        else
+            puts " - This Activity could be possible but it may require other things."
+            puts "      Accessibility Rank: #{activity.activity.values[6]} (Ranked 0 to 1)."
+        end
+    end
+    end
+
+
 
 
     def select
