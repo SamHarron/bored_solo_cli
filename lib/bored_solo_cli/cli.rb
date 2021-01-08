@@ -95,13 +95,13 @@ class CLI
 
             if  activity.activity.values[3] == 0
                 puts " - This Activity could be/is free!"
-                puts "      Accessibility Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
             elsif activity.activity.values[3].between?(0.01, 0.5)
                 puts " - This Activity shouldn't cost very much, but there could be other factors."
-                puts "      Accessibility Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
             else
                 puts " - This Activity could be costly and there are likely other factors."
-                puts "      Accessibility Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{activity.activity.values[3]} (Ranked 0 to 1)."
             end
         end
     end
