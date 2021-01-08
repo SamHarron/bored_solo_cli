@@ -22,14 +22,18 @@ class CLI
         select
     end
 
-    def activities_list
+    def random_activity
         SoloActivities.all.each do |activity|
             puts ""
-            puts "#{activity.activity}"
+            puts "You Should..."
+            puts ""
+            puts "#{activity.activity.values[0]}!"
             puts ""
         end
         activity_details
     end
+
+
 
     def goodbye
         puts "Goodbye, We hope your Boredom has been cured!"
@@ -41,26 +45,33 @@ class CLI
     end
 
     def activity_details
-        puts "Type the Activity Name for more detail."
+        puts "* Type 'info' for more detail or 'n' to get a different activity."
 
         choice = input
-        puts "#{choice}"
-        activity_selection = SoloActivities.find_activity(choice)
+        if choice == "info"
+            info
+        end
     end
 
-    # def activity_selection(activity)
-    #     puts "Activity: #{activity.activity}"
-    #     puts "Type: #{activity.type}"
-    #     puts "Accessibility: #{activity.accessibility}"
-    #     puts "Price: #{activity.price}"
-    #     select
-    # end
+  def info
+    SoloActivities.all.each do |activity|
+      puts ""
+      puts "#{activity.activity.values[0]}"
+      puts ""
+      puts "Type: #{activity.activity.values[1]}"
+      puts ""
+      puts "Accessibility: #{activity.activity.values[6]}"
+      puts ""
+      puts "Price: #{activity.activity.values[3]}"
+    end
+      select
+  end
 
 
     def select
         choice = input
         if choice == 'y'
-            activities_list
+            random_activity
             select
         elsif choice == 'exit'
             goodbye
