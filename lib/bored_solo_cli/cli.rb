@@ -33,8 +33,9 @@ class CLI
     end
 
     def goodbye
-        puts "Goodbye, We hope your Boredom will be cured!"
         exit
+    rescue SystemExit
+        puts "Goodbye, We hope your Boredom will be cured!"
     end
 
     def invalid
