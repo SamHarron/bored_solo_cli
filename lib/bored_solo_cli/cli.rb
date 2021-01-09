@@ -33,7 +33,7 @@ class CLI
     end
 
     def goodbye
-        puts "Goodbye, We hope your Boredom will be cured!"
+        puts "Goodbye , We hope your Boredom will be cured!"
         Kernel.exit
     end
 
