@@ -34,7 +34,7 @@ class CLI
 
     def goodbye
         puts "Goodbye , We hope your Boredom will be cured!"
-        Kernel.exit
+        exit
     end
 
     def invalid
