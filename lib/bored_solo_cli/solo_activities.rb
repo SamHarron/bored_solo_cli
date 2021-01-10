@@ -3,9 +3,12 @@ class SoloActivities
     @@all = []
 
     attr_accessor :activity
-
+    
     def initialize(activity)
         @activity = activity
+       # @type = type
+       # @accessibility = accessibility
+       # @price = price
         save
     end
 
