@@ -5,6 +5,5 @@ class API
         activity_hash = JSON.parse(response)
     
         SoloActivities.new(activity_hash)
-        
     end
 end
