@@ -22,7 +22,7 @@ class CLI
     end
 
     def random_activity
-        SoloActivities.all.each do |rm|
+        SoloActivities.all.map do |rm|
             puts ""
             puts "You Should..."
             puts ""
@@ -51,7 +51,7 @@ class CLI
     end
 
     def info
-        SoloActivities.all.each do |i|
+        SoloActivities.all.map do |i|
         puts "  |"
         puts "  |"
         puts "  v"
@@ -63,7 +63,7 @@ class CLI
         accessibility_level
         puts ""
         price_level
-    end
+        end
     puts ""
     puts "* Type 'n' to get a new activity."
     puts "* Type 'exit' if you want to do the above activity."
@@ -72,7 +72,7 @@ class CLI
     end
 
     def accessibility_level
-        SoloActivities.all.each do |al|
+        SoloActivities.all.map do |al|
 
             if  al.activity.values[6].between?(0,0.25)
                 puts " - This Activity is very possible."
@@ -91,7 +91,7 @@ class CLI
     end
 
     def price_level
-        SoloActivities.all.each do |pl|
+        SoloActivities.all.map do |pl|
 
             if  pl.activity.values[3] == 0
                 puts " - This Activity could be/is free!"
