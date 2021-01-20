@@ -74,18 +74,18 @@ class CLI
     def accessibility_level
         SoloActivities.all.each do |al|
 
-            if  al.activity.values[6].between?(0,0.25)
+            if  al.accessibility.between?(0,0.25)
                 puts " - This Activity is very possible."
-                puts "      Accessibility Rank: #{al.activity.values[6]} (Ranked 0 to 1)."
-            elsif al.activity.values[6].between?(0.26, 0.5)
+                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
+            elsif al.accessibility.between?(0.26, 0.5)
                 puts " - This Activity is possible."
-                puts "      Accessibility Rank: #{al.activity.values[6]} (Ranked 0 to 1)."
-            elsif   al.activity.values[6].between?(0.51, 0.75)
+                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
+            elsif   al.accessibility.between?(0.51, 0.75)
                 puts " - This Activity could be possible."
-                puts "      Accessibility Rank: #{al.activity.values[6]} (Ranked 0 to 1)."
+                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
             else
                 puts " - This Activity could be possible but it may require other things."
-                puts "      Accessibility Rank: #{al.activity.values[6]} (Ranked 0 to 1)."
+                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
             end
         end
     end
