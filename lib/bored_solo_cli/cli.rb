@@ -93,15 +93,15 @@ class CLI
     def price_level
         SoloActivities.all.each do |pl|
 
-            if  pl.activity.values[3] == 0
+            if  pl.price == 0
                 puts " - This Activity could be/is free!"
-                puts "      Price Rank: #{pl.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
             elsif pl.activity.values[3].between?(0.01, 0.5)
                 puts " - This Activity shouldn't cost very much, but there could be other factors."
-                puts "      Price Rank: #{pl.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
             else
                 puts " - This Activity could be costly and there are likely other factors."
-                puts "      Price Rank: #{pl.activity.values[3]} (Ranked 0 to 1)."
+                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
             end
         end
     end
