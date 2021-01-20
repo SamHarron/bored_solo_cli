@@ -4,11 +4,11 @@ class API
         response = RestClient.get('https://www.boredapi.com/api/activity?participants=1')
         activity_hash = JSON.parse(response)
 
-        activity_hash["activity"] = activity
-        activity_hash["type"] = type
-        activity_hash["accessibility"] = accessibility
-        activity_hash["price"] = price
-        
+        activity = activity_hash["activity"] 
+        type = activity_hash["type"]
+        accessibility = activity_hash["accessibility"]
+        price = activity_hash["price"]
+
         SoloActivities.new(activity, type, accessibility, price)
     end
-end
+ende

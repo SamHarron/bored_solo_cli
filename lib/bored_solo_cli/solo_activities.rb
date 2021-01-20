@@ -9,7 +9,6 @@ class SoloActivities
         @type = type
         @accessibility = accessibility
         @price = price
-        binding.pry
         save
     end
 
