@@ -55,10 +55,10 @@ class CLI
         puts "  |"
         puts "  |"
         puts "  v"
-        puts "#{i.activity.values[0]}..."
+        puts "#{i.activity}..."
         puts "_____________________________________________________________"
         puts ""
-        puts " - This activity is #{i.activity.values[1]} based."
+        puts " - This activity is #{i.type} based."
         puts ""
         accessibility_level
         puts ""
