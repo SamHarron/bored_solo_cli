@@ -2,15 +2,15 @@ class SoloActivities
 
     @@all = []
 
-    attr_accessor :activity #, :type, :accessibility, :price
+    attr_accessor :activity, :type, :accessibility, :price 
     
-    def initialize(activity) # , type, accessibility, price)
+    def initialize(activity, type, accessibility, price) 
         @activity = activity
-        # @type = type
-        # @accessibility = accessibility
-        # @price = price
+        @type = type
+        @accessibility = accessibility
+        @price = price
+        binding.pry
         save
-        
     end
 
     def save
