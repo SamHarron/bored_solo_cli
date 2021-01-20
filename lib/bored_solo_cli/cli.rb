@@ -109,9 +109,6 @@ class CLI
 
     def select
         choice = input
-        # if choice == 'y'
-        #     random_activity
-        #     select
         if choice == "info"
             info
         elsif choice == 'exit'
