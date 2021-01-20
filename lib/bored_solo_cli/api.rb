@@ -11,4 +11,4 @@ class API
 
         SoloActivities.new(activity, type, accessibility, price)
     end
-ende
+end

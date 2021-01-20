@@ -26,7 +26,7 @@ class CLI
             puts ""
             puts "You Should..."
             puts ""
-            puts "#{rm.activity.values[0]}!"
+            puts "#{rm.activity}!"
             puts ""
         end
         activity_details
