@@ -74,6 +74,7 @@ class CLI
     def accessibility_level
         SoloActivities.all.each do |al|
 
+
             if  al.accessibility.between?(0,0.25)
                 puts " - This Activity is very possible."
                 puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
@@ -96,7 +97,7 @@ class CLI
             if  pl.price == 0
                 puts " - This Activity could be/is free!"
                 puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
-            elsif pl.activity.values[3].between?(0.01, 0.5)
+            elsif pl.price.between?(0.01, 0.5)
                 puts " - This Activity shouldn't cost very much, but there could be other factors."
                 puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
             else
@@ -108,10 +109,10 @@ class CLI
 
     def select
         choice = input
-        if choice == 'y'
-            random_activity
-            select
-        elsif choice == "info"
+        # if choice == 'y'
+        #     random_activity
+        #     select
+        if choice == "info"
             info
         elsif choice == 'exit'
             goodbye
