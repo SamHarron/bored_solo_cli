@@ -1,11 +1,11 @@
-class SoloActivities
+class SoloActivity
 
     @@all = []
 
-    attr_accessor :activity, :type, :accessibility, :price 
+    attr_accessor :name, :type, :accessibility, :price 
     
-    def initialize(activity, type, accessibility, price) 
-        @activity = activity
+    def initialize(name, type, accessibility, price) 
+        @name = name
         @type = type
         @accessibility = accessibility
         @price = price
@@ -19,5 +19,4 @@ class SoloActivities
     def self.all
         @@all
     end  
-
 end

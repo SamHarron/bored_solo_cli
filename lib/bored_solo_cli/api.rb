@@ -9,6 +9,6 @@ class API
         accessibility = activity_hash["accessibility"]
         price = activity_hash["price"]
 
-        SoloActivities.new(activity, type, accessibility, price)
+        SoloActivity.new(activity, type, accessibility, price)
     end
 end

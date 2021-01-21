@@ -22,11 +22,11 @@ class CLI
     end
 
     def random_activity
-        SoloActivities.all.each do |rm|
+        SoloActivity.all.each do |activity|
             puts ""
             puts "You Should..."
             puts ""
-            puts "#{rm.activity}!"
+            puts "#{activity.name}!"
             puts ""
         end
         activity_details
@@ -51,14 +51,14 @@ class CLI
     end
 
     def info
-        SoloActivities.all.each do |i|
+        SoloActivity.all.each do |activity|
         puts "  |"
         puts "  |"
         puts "  v"
-        puts "#{i.activity}..."
+        puts "#{activity.name}..."
         puts "_____________________________________________________________"
         puts ""
-        puts " - This activity is #{i.type} based."
+        puts " - This activity is #{activity.type} based."
         puts ""
         accessibility_level
         puts ""
@@ -72,18 +72,18 @@ class CLI
     end
 
     def accessibility_level
-        SoloActivities.all.each do |al|
+        SoloActivity.all.each do |activity|
 
 
-            if  al.accessibility.between?(0,0.25)
+            if  activity.accessibility.between?(0,0.25)
                 puts " - This Activity is very possible."
-                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
-            elsif al.accessibility.between?(0.26, 0.5)
+                puts "      Accessibility Rank: #{activity.accessibility} (Ranked 0 to 1)."
+            elsif activity.accessibility.between?(0.26, 0.5)
                 puts " - This Activity is possible."
-                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
-            elsif   al.accessibility.between?(0.51, 0.75)
+                puts "      Accessibility Rank: #{activity.accessibility} (Ranked 0 to 1)."
+            elsif   activity.accessibility.between?(0.51, 0.75)
                 puts " - This Activity could be possible."
-                puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
+                puts "      Accessibility Rank: #{activity.accessibility} (Ranked 0 to 1)."
             else
                 puts " - This Activity could be possible but it may require other things."
                 puts "      Accessibility Rank: #{al.accessibility} (Ranked 0 to 1)."
@@ -92,17 +92,16 @@ class CLI
     end
 
     def price_level
-        SoloActivities.all.each do |pl|
-
-            if  pl.price == 0
+        SoloActivity.all.each do |activity|
+            if  activity.price == 0
                 puts " - This Activity could be/is free!"
-                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
-            elsif pl.price.between?(0.01, 0.5)
+                puts "      Price Rank: #{activity.price} (Ranked 0 to 1)."
+            elsif activity.price.between?(0.01, 0.5)
                 puts " - This Activity shouldn't cost very much, but there could be other factors."
-                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
+                puts "      Price Rank: #{activity.price} (Ranked 0 to 1)."
             else
                 puts " - This Activity could be costly and there are likely other factors."
-                puts "      Price Rank: #{pl.price} (Ranked 0 to 1)."
+                puts "      Price Rank: #{activity.price} (Ranked 0 to 1)."
             end
         end
     end
@@ -114,7 +113,7 @@ class CLI
         elsif choice == 'exit'
             goodbye
         elsif choice == 'n'
-            SoloActivities.all.clear
+            SoloActivity.all.clear
             API.get_data
             random_activity
             select
